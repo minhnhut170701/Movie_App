@@ -27,4 +27,4 @@ if(process.env.NODE_ENV === "production"){
 }
 app.use(errorHandler)
 
-app.listen(port, () => console.log(`this server start on port ${port}`))
+app.listen(process.env.PORT || port, () => console.log(`this server start on port ${port}`))
