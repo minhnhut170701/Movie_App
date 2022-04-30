@@ -1,0 +1,25 @@
+.css-qivjh0-MuiStepLabel-label.Mui-active{
+    color: white !important;
+    font-size: 1.2rem;
+}
+
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active{
+    color: red !important;
+    font-size: 2rem !important;
+}
+
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-completed{
+    color: red !important;
+}
+
+.css-qivjh0-MuiStepLabel-label.Mui-completed{
+    color: white !important;
+}
+.css-16ubnlw-MuiStepLabel-labelContainer{
+    color: gray !important;
+    font-size: 1.2rem;
+}
+
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root{
+    font-size: 2rem !important;
+}

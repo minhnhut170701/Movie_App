@@ -1,0 +1,43 @@
+import React, {useState} from 'react';
+import { movie } from '../../data/topmovie';
+
+import MovieResult from './MovieResult';
+
+const FillterMovie = () => {
+    const [search, setSearch] = useState('');
+
+   
+  return (
+    <div className='max-w-7xl margin-center'>
+        <div className='mt-36'>
+            <form className='flex items-center space-x-3 '>
+                <input 
+                className='w-[50%] p-4 bg-[#191919] text-zinc-200'
+                type="text"
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder='Searching movie you want...' />
+                <button type='submit' className='bg-red-600 text-white hover:bg-red-700 p-4'>Submit</button>
+            </form>
+           
+        </div>
+        <h1 className='text-white mt-16 text-3xl font-bold uppercase'>Top Reuslt: </h1>
+        <div className='mt-5 grid grid-cols-4 gap-10 max-w-7xl 
+        text-white'>
+            { movie.filter((item) => {
+                if(search === ""){
+                    return item
+                }
+                // cùng đổi kích cỡ chữ tìm kiếm giống nhau để dễ nhận diện
+                else if(item.title.toUpperCase().includes(search.toUpperCase())){
+                    return item
+                }}).map((item) =>(
+                    <MovieResult  data={item} key={item.id} />
+                ))
+            }
+        </div>
+        
+    </div>
+  )
+}
+
+export default FillterMovie

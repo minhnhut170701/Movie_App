@@ -1,0 +1,22 @@
+.item:after{
+    content: '';
+    width: 0;
+    height: 0;
+    border-right: 1em solid #bf000a;
+    border-top: 1em solid transparent;
+    position: absolute;
+    top: -1px;
+    left: -16px;
+}
+
+.item::before{
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 1em solid #bf000a;
+    border-top: 1em solid transparent;
+    position: absolute;
+    top: -1px;
+    left: 100%;
+
+}
