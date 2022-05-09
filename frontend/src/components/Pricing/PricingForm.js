@@ -5,7 +5,11 @@ import {AiFillCloseCircle,AiFillCheckCircle} from "react-icons/ai";
 import {Link} from "react-router-dom"
 import "./Pricing.css"
 
+
 const PricingForm = () => {
+
+   
+    
   return (
     <div className='text-white'>
         <form className='table-auto  w-[85%] margin-center border-collapse bg-[#191919]'>
@@ -114,8 +118,10 @@ const PricingForm = () => {
                 </tr>
                 <tr className='margin-center border border-transparent boder-b-[#141414]'>
                     <td className='p-14'></td>
-                    <td className='p-14 text-3xl'>
-                        <Link to='/checkout' className='p-4 bg-red-600 uppercase text-xl'>subscribe</Link>
+                    <td className='p-14 text-3xl '>
+                        <Link to='/checkout'className='p-4 bg-red-600 uppercase text-xl ' >
+                            subscribe
+                        </Link>
                     </td>
                     <td className='p-14  text-3xl'>
                         <Link to='/checkout' className='p-4 bg-red-600 uppercase text-xl'>subscribe</Link>
@@ -126,6 +132,7 @@ const PricingForm = () => {
                 </tr>
             </tbody>
         </form>
+        
     </div>
   )
 }

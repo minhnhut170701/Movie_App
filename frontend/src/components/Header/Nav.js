@@ -3,7 +3,6 @@ import {Link, useNavigate} from "react-router-dom";
 
 import { useSelector, useDispatch} from 'react-redux';
 import { logout, reset } from '../../features/auth/authSlice';
-import { toast } from 'react-toastify';
 import {AiOutlineUser,AiOutlineSearch} from "react-icons/ai"
 const Nav = () => {
   const navigate = useNavigate()
@@ -34,7 +33,7 @@ const Nav = () => {
               </ul>
               <div className='flex items-center space-x-4'>
                 <Link to="/login" className='text-2xl'><AiOutlineSearch /></Link>
-                <p>{user.name}</p>
+                <Link to="/profile">{user.name}</Link>
                 <button onClick={onLogout} >Logout</button>
                 
               </div>
