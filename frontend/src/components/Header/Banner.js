@@ -7,13 +7,13 @@ import {Link} from "react-router-dom"
 const Banner = ({title, des, vote, ep}) => {
   
   return (
-    <div className='text-white relative z-20 max-w-full p-36 mt-5 space-y-4 '>
-        <div className='flex items-center bg-gradient-to-r from-red-600  w-[20%] space-x-4'>
+    <div className='text-white relative z-20 max-w-full md:p-36 p-10 md:mt-5 mt-28 space-y-4 '>
+        <div className='flex items-center bg-gradient-to-r from-red-600  md:w-[20%] w-[100%] space-x-4'>
             <div className='h-[45px] w-2 bg-red-900'/>
-            <h1 className='uppercase text-4xl'>Movie</h1>
+            <h1 className='uppercase md:text-4xl text-xl'>Movie</h1>
         </div>
         
-        <h2 className='uppercase text-5xl pt-5 pb-5'>{title}</h2>
+        <h2 className='uppercase text-3xl md:text-5xl pt-5 pb-5'>{title}</h2>
         <div className='flex items-center space-x-4'>
             <div className='flex items-center space-x-2' >
                 <p>Vote</p>

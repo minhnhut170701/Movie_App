@@ -3,12 +3,8 @@ import {BsFillPlayFill} from "react-icons/bs";
 import {AiFillStar} from "react-icons/ai";
 import {Link} from "react-router-dom"
 
-const MovieResult = ({title, data, key}) => {
+const MovieResult = ({ data, key}) => {
  
-  
-
-
-
 
   return (
       <div className='mt-3 w-[100%] h-[300px] relative bg-no-repeat bg-cover hover-show' 

@@ -23,6 +23,19 @@ export const getData = createAsyncThunk('data/getAll', async (_,thunkAPI) =>{
     }
 })
 
+//search movie
+export const searchData = createAsyncThunk('data/searchAll', async(key,thunkAPI) =>{
+    try{
+        return await movieService.searchData(key)
+    }catch(error){
+        const message = (error.reponse && error.response.data && error.response.data.message)
+         || error.message
+         || error.toString()
+        
+         return thunkAPI.rejectWithValue(message)
+    }
+})
+
 export const movieSlice = createSlice({
     name: 'movie',
     initialState,
@@ -41,6 +54,19 @@ export const movieSlice = createSlice({
             state.data = action.payload
         })
         .addCase(getData.rejected, (state, action) =>{
+            state.isLoading = false
+            state.isError = true
+            state.message = action.payload
+        })
+        .addCase(searchData.pending, (state) =>{
+            state.isLoading = true
+        })
+        .addCase(searchData.fulfilled, (state, action) =>{
+            state.isLoading = false
+            state.isSuccess = true
+            state.data = action.payload
+        })
+        .addCase(searchData.rejected, (state, action) =>{
             state.isLoading = false
             state.isError = true
             state.message = action.payload

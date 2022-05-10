@@ -13,9 +13,15 @@ const getData = async (token) =>{
 
     return response.data
 }
+// search data movie
+const searchData = async ( key) =>{
+    const response = await axios.get(`/api/goals/search/${key}`)
+    return response.data
+}
 
 const movieService = {
     getData,
+    searchData
 }
 
 export default movieService

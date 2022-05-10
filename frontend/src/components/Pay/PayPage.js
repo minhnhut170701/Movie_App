@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import CheckoutForm from './CheckoutContain';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector} from 'react-redux';
 
 const PayPage = () => {
   const {user} = useSelector((state) => state.auth)

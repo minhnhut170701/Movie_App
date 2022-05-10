@@ -1,16 +1,23 @@
-import React, {useState} from 'react';
-import { movie } from '../../data/topmovie';
-
+import React, {useEffect, useState} from 'react';
 import MovieResult from './MovieResult';
+import { useSelector, useDispatch } from 'react-redux';
+import { searchData, getData, reset } from '../../features/movie/movieSlice'; 
 
 const FillterMovie = () => {
     const [search, setSearch] = useState('');
+    const dispatch = useDispatch()
+    const {data} = useSelector((state) => state.movie)
+    
+    useEffect(() =>{
+        dispatch(getData())
+    }, [dispatch])
 
+   
    
   return (
     <div className='max-w-7xl margin-center'>
         <div className='mt-36'>
-            <form className='flex items-center space-x-3 '>
+            <form className='flex items-center space-x-3'>
                 <input 
                 className='w-[50%] p-4 bg-[#191919] text-zinc-200'
                 type="text"
@@ -23,7 +30,7 @@ const FillterMovie = () => {
         <h1 className='text-white mt-16 text-3xl font-bold uppercase'>Top Reuslt: </h1>
         <div className='mt-5 grid grid-cols-4 gap-10 max-w-7xl 
         text-white'>
-            { movie.filter((item) => {
+           {data.filter((item) => {
                 if(search === ""){
                     return item
                 }

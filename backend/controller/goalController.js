@@ -9,6 +9,16 @@ const getGoals = asyncHandler(async (req, res) =>{
     res.status(200).json(goals)
 })
 
+const searchGoals = asyncHandler(async (req, res) =>{
+    let data = await Goal.find({
+        "$or":[
+            {title:{$regex: req.params.key}}
+        ]
+    })
+    res.send(data)
+})
+
+
 //@  SET goal
 //@ route POST /api/goals
 //@ access Prive
@@ -89,4 +99,5 @@ module.exports = {
     setGoals,
     updateGoal,
     deleteGoals,
+    searchGoals,
 }

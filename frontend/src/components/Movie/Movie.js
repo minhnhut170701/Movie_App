@@ -16,11 +16,11 @@ const Movie = ({title, data, isTop}) => {
           <h1 className='text-4xl font-bold'>{title}</h1>
           <Link to="/search" className='text-lg text-red-600 font-bold'>View All</Link>
       </div>
-      <div className='mt-3 flex items-center space-x-4 relative'>
+      <div className='mt-3 md:flex md:items-center md:space-x-4 relative grid grid-cols-2 gap-2 p-2'>
         {data.map((item) => (
           <Link to={`/${item.id}`} key={item.id}
-            className={isTop ? "w-[20%] h-[360px] relative  bg-no-repeat bg-cover hover-show":
-            "w-[20%] h-[250px] relative  bg-no-repeat bg-cover hover-show"}
+            className={isTop ? "md:w-[20%] w-[100%] h-[360px] relative bg-no-repeat bg-cover hover-show":
+            "md:w-[20%] w-[100%] h-[250px] relative  bg-no-repeat bg-cover hover-show"}
           style={{backgroundImage: `url(${item.imageSmall})`}}>
               {/* inforMovie */}
               <div className={isTop ? 'absolute top-[60%] p-4 w-full space-y-2 z-10' :

@@ -42,7 +42,6 @@ const Home = () => {
 
 const fillterItem = (text) =>{
     if(text === 'Fillter'){
-     
       setSelec(text)
       setCate(false)
       console.log(cate)
