@@ -54,7 +54,7 @@ const CheckoutForm = () => {
   return (
     <div className='bg-[#191919]'>
       <h1 className='text-center text-3xl uppercase text-red-600 font-bold p-4'>Checkout</h1>
-      <Box sx={{ width: '100%' }} >
+      <Box sx={{ width: '100%' }} className="text-color" >
         <Stepper activeStep={activeStep}>
           {steps.map((label, index) => {
             const stepProps = {};

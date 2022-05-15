@@ -23,3 +23,20 @@
 .css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root{
     font-size: 2rem !important;
 }
+
+
+/* heroku */
+
+.css-4ff9q7.Mui-active{
+    color: red !important;
+    font-size: 2rem !important;
+}
+
+.css-1hngkjo{
+    color: white !important;
+    font-size: 1.2rem;
+}
+
+.css-4ff9q7.Mui-completed {
+    color: red !important;
+}

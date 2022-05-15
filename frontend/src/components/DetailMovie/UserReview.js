@@ -2,8 +2,6 @@
 import React from 'react'
 import {AiFillLike} from "react-icons/ai";
 import {BsChatDots} from "react-icons/bs"
-import user from "../../images/protofie.jpg";
-import Rate from './Rate';
 const UserReview = ({data}) => {
   return (
     <div className='flex space-x-4 w-[100%]'>
