@@ -6,9 +6,9 @@ import {FaTwitter, FaFacebook, FaGithub, FaInstagram} from "react-icons/fa"
 const Footer = () => {
   return (
     <footer className='bg-[#191919] mt-16'>
-        <div className=' margin-center p-20 text-white flex space-x-10'>
-            <nav className='w-[60%] space-y-4'>
-                <ul className='flex items-center space-x-4'>
+        <div className=' margin-center md:p-20 p-4 text-white flex md:space-x-10 md:flex-row flex-col space-y-6'>
+            <nav className='md:w-[60%] md:space-y-4 space-y-6'>
+                <ul className='flex items-center md:space-x-4 md:flex-row flex-col'>
                     <li>Terms Of Use</li>
                     <li> Privacy-Policy</li>
                     <li> Blog</li>

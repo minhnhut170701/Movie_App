@@ -14,7 +14,7 @@ const InforUser = () => {
     navigate('/login')
   }
   return (
-    <div className='text-white bg-[#191919] p-4'>
+    <div className='text-white bg-[#191919] p-20 pt-5 pb-5'>
        <div className='flex items-center justify-between'>
             <section className='flex space-x-3 items-center'>
                 <img src={profile} alt='error' className='w-24 h-24 rounded-full' />

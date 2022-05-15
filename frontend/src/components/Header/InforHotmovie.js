@@ -20,8 +20,8 @@ const InforHotmovie = () => {
         {dataMovie.slice(3,7).map((item) =>(
             <SwiperSlide key={item.id}
             style={{background: `url(${item.imageLarge})`, height: '700px'}}
-            className='bg-center bg-no-repeat bg-cover relative'>
-            <div >
+            className='relative bg-no-repeat bg-cover bg-center '>
+            <div>
               <Banner title={item.title} ep={item.ep} des={item.description} vote={item.rate} />
               <div className='absolute w-full h-full bg-gradient-to-r from-black opacity-80 top-0 z-10'/>
             </div>    

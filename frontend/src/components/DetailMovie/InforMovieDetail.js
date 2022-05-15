@@ -1,8 +1,8 @@
 import React from "react";
 import {AiFillStar, AiOutlineEye} from "react-icons/ai";
 export function InforMovieDetail({data}) {
-  return <div className='max-w-7xl margin-center mt-20 flex items-center'>
-            <section className='space-y-10 w-[60%]'>
+  return <div className='max-w-7xl margin-center mt-20 flex md:flex-row flex-col items-center'>
+            <section className='space-y-10 md:w-[60%] md:p-0 p-4'>
                 <div className='flex items-center space-x-4'>
                     <h2 className='text-3xl'>{data.title}</h2>
                     <div className='flex items-center space-x-2 text-red-600 text-xl'>
@@ -14,7 +14,7 @@ export function InforMovieDetail({data}) {
                     </div>
                     <p>9.2</p>
                 </div>
-                <h5 className='text-lg bg-gradient p-2 w-[20%]'>{data.category}</h5>
+                <h5 className='text-lg bg-gradient p-2 md:w-[20%] w-[60%]'>{data.category}</h5>
                 <div className='flex items-center space-x-4'>
                     <p className='p-2 bg-amber-500 text-black rounded-md uppercase'>Vip</p>
                     <p>Time: 45p</p>
@@ -33,7 +33,7 @@ export function InforMovieDetail({data}) {
                     Add your list
                 </button>
             </section>
-            <section className='w-[40%]'>
+            <section className='w-[40%] md:block hidden'>
                 <img src={data.imageSmall} alt='error'  />
             </section>
         </div>;

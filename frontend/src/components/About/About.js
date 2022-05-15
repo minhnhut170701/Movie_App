@@ -8,8 +8,8 @@ import icon3 from "../../images/icon03.png";
 const About = () => {
   return (
     <div className='text-white max-w-7xl margin-center mt-24'>
-       <div role="article" className='flex items-center space-x-10'>
-           <img className='w-[50%]'
+       <div role="article" className='flex md:flex-row flex-col p-4 items-center space-x-10'>
+           <img className='md:w-[50%] w-full'
            src={about} alt="banner" />
            <div className='space-y-20'>
                <h1 className='text-5xl font-bold'>Best pick for hassle-free streaming experience.</h1>

@@ -6,8 +6,9 @@ const Popular = () => {
   return (
     <div className='max-w-7xl margin-center mt-16 h-[600px] bg-fixed mb-4
     bg-popular  bg-cover bg-no-repeat relative'>
-        <section className='max-w-5xl margin-center  flex justify-between items-center  relative top-32 z-10'>
-            <div className='text-white space-y-6 w-[50%]'>
+        <section className='max-w-5xl margin-center flex md:justify-between md:flex-row flex-col items-center 
+        relative md:top-32 top-20 z-10 p-4'>
+            <div className='text-white space-y-6 md:w-[50%] w-full'>
                 <h1 className='text-4xl font-bold'>Hẹn Hò Chốn Công Sở</h1>
                 <div className='flex items-center space-x-2 text-red-600'>
                     <AiFillStar />
@@ -26,7 +27,7 @@ const Popular = () => {
                     <p>Play Now</p>
                 </button>
             </div>
-            <img src="https://i.imgur.com/29JNd9G.jpg" className='w-[300px] h-[400px] p-4' alt="error" />
+            <img src="https://i.imgur.com/29JNd9G.jpg" className='w-[300px] h-[400px] p-4 md:block hidden' alt="error" />
 
         </section>
     

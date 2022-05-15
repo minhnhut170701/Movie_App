@@ -11,7 +11,7 @@ const MovieResult = ({ data, key}) => {
       style={{backgroundImage: `url(${data.imageSmall})`}} key={key}>
           <Link to={`/${data.id}`} key={data.id}>
               {/* inforMovie */}
-              <div className='absolute top-[50%] p-4 w-full space-y-2 z-10'>
+              <div className='absolute top-[50%]  md:p-4 p-2 w-full space-y-2 z-10'>
                 <h3 className='p-2 bg-gradient-to-r from-red-600 text-white w-28 show-category font-bold'>
                   {data.category}
                 </h3>

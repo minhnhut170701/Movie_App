@@ -3,6 +3,7 @@ import React from 'react'
 import InforUser from './InforUser';
 import Movie from '../Movie/Movie';
 import { movie } from '../../data/topmovie';
+import Setting from './Setting';
 
 const ProfilePage = () => {
   return (
@@ -14,8 +15,12 @@ const ProfilePage = () => {
             </div>
         </div>
 
-        <div className='max-w-4xl margin-center mt-10 p-4'>
+        <div className='max-w-7xl margin-center mt-10'>
                 <InforUser />
+        </div>
+        {/* setting */}
+        <div className='max-w-7xl margin-center mt-5'>
+              <Setting />
         </div>
         <div className='max-w-7xl margin-center mt-10'>
             <h1 className='text-white font-bold text-3xl relative top-16'>Movies History: </h1>

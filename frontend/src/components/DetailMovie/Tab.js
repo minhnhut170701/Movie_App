@@ -6,7 +6,7 @@ import Episode from './Episode';
 export function TabEp() {
   return <Tab.Group>
                 <div className="line-gradient">
-                <Tab.List className="max-w-4xl margin-center flex space-x-4  pl-32">
+                <Tab.List className="max-w-4xl margin-center flex space-x-4 md:pl-32">
                     <Tab as={Fragment}>
                         {({
             selected
@@ -34,8 +34,8 @@ export function TabEp() {
                 </Tab.List>
                 </div>
                
-                <Tab.Panels className=" max-w-6xl margin-center mt-10 flex justify-around">
-                    <Tab.Panel className="">
+                <Tab.Panels className=" max-w-6xl margin-center mt-10 flex md:justify-around p-4">
+                    <Tab.Panel>
                         <h1>
                         Bộ phim Cổ trang tình cảm lãng mạn, 
                         Thả Thí Thiên Hạ (Tranh Thiên Hạ) lấy bối cảnh vô định, trong một quá khứ không có thật. 

@@ -16,15 +16,15 @@ const Movie = ({title, data, isTop}) => {
           <h1 className='text-4xl font-bold'>{title}</h1>
           <Link to="/search" className='text-lg text-red-600 font-bold'>View All</Link>
       </div>
-      <div className='mt-3 md:flex md:items-center md:space-x-4 relative grid grid-cols-2 gap-2 p-2'>
+      <div className='mt-3 md:flex md:items-center md:space-x-4 relative grid grid-cols-2 gap-4 p-4'>
         {data.map((item) => (
           <Link to={`/${item.id}`} key={item.id}
-            className={isTop ? "md:w-[20%] w-[100%] h-[360px] relative bg-no-repeat bg-cover hover-show":
-            "md:w-[20%] w-[100%] h-[250px] relative  bg-no-repeat bg-cover hover-show"}
+            className={isTop ? "md:w-[20%] w-[100%] h-[360px] relative bg-no-repeat bg-cover bg-center hover-show":
+            "md:w-[20%] w-[100%] h-[250px] relative  bg-no-repeat bg-cover bg-center hover-show"}
           style={{backgroundImage: `url(${item.imageSmall})`}}>
               {/* inforMovie */}
-              <div className={isTop ? 'absolute top-[60%] p-4 w-full space-y-2 z-10' :
-            'absolute top-[40%] p-4 w-full space-y-2 z-10'}>
+              <div className={isTop ? 'absolute top-[60%] md:p-4 p-2 w-full space-y-2 z-10' :
+            'absolute top-[40%] md:p-4 p-2 w-full space-y-2 z-10'}>
                 <h3 className='p-2 bg-gradient-to-r from-red-600 text-white w-28 show-category font-bold'>
                   {item.category}
                 </h3>

@@ -19,6 +19,7 @@ import PricingPage from './components/Pricing/PricingPage';
 import PayPage from './components/Pay/PayPage';
 import ProfilePage from './components/Profile/ProfilePage';
 import Spiner from './components/Spiner';
+import Dashboard from './View/Dashboard';
 
 function App() {
   
@@ -32,6 +33,7 @@ function App() {
      <ScrolltoTop />
       <Nav />
       <Routes>
+        <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/' element={<Home />} />
           <Route path='/:detail' element={<Detail />} />
           <Route path='/search' element={<FillterMovie />} />
