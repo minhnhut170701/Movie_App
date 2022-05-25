@@ -14,14 +14,27 @@ const getData = async (token) =>{
     return response.data
 }
 // search data movie
-const searchData = async ( key) =>{
+const searchData = async (key) =>{
     const response = await axios.get(`/api/goals/search/${key}`)
+    return response.data
+}
+
+// set data movie comment
+const setDataComment = async (key,dataComment,token) =>{
+    const config = {
+        headers:{
+            Authorization: `Bearer ${token}`,
+        },
+    }
+    const response = await axios.post(`/api/goals/${key}`, dataComment, config)
+   
     return response.data
 }
 
 const movieService = {
     getData,
-    searchData
+    searchData,
+    setDataComment
 }
 
 export default movieService

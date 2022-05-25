@@ -1,53 +1,67 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 
 import Rate from './Rate';
 import UserReview from './UserReview';
-//icons
 import { commnet } from '../../data/comment';
+import { useDispatch, useSelector} from 'react-redux';
+import { setDataComment} from '../../features/movie/movieSlice';
+import { useParams, useLocation } from 'react-router-dom';
+import { getData } from '../../features/movie/movieSlice';
 
-const Review = () => {
+const Review = ({dataComment}) => {
     
-    const [reviews, setReviews] = useState(commnet)
+    const rateRef = useRef()
     const [rating, setRating] = useState(null)
+    const params = useParams()
     const [form, setForm] = useState({
         name: '',
-        review: '',
-        rate: '',
-        email: ''
+        comment: '',
+        email: '',
+        rate: rating
     })
-    const userReview = useRef()
-    const userName = useRef()
-    const userRating = useRef()
+    const dispatch = useDispatch()
+    
+    const {name, email, comment} = form
 
-   
-    const handleSubmit =(e) =>{
-        e.preventDefault()
-        let copy = [...reviews]
-        copy = reviews.concat({
-            name: userName.current.value, 
-            review: userReview.current.value,
-            rate: rating})
-        setReviews(copy)
-        setForm({
-            name: '',
-            review: '',
-            rate: '',
-            email: ''
-        })
-        
+    const {user} = useSelector((state) => state.auth)
+
+
+    const onChange = (e) =>{
+        setForm((prevState) =>({
+            ...prevState,
+            [e.target.name]: e.target.value,
+        }))
     }
 
-    
+
+    const handleSubmit =(e) =>{
+        e.preventDefault()
+        const userData = {
+            name, 
+            rate: rating, 
+            comment,
+        }
+        dispatch(setDataComment({key: params.detail, data: userData}))
+        setForm({
+            name: '',
+            comment: '',
+            email: '',
+        })
+
+        window.location.reload()
+       
+        
+    }
   return (
       <div>
           {/* other review */}
           <article className='space-y-5'>
-                {reviews.map((item, index) =>(
+                {dataComment.comment.map((item, index) =>(
                     <UserReview 
                         key={index}  
-                        data={item} 
-                    />
-                    
+                        data={item}
+                        userName={user}
+                    />   
                 ))}
           </article>
           
@@ -59,16 +73,15 @@ const Review = () => {
                     <section className='flex items-center space-x-4'>
                         <p className='text-neutral-500'>You rating</p>
                         <div className='flex items-center space-x-2'>
-                            <Rate count={5} setRating={setRating} rating={rating} userRating={userRating} />
+                            <Rate count={5} setRating={setRating} rating={rating} rate={rateRef}   />
                         </div>
                     </section>
                     <p className='text-neutral-500'>Your review*</p>
                     <input 
                         type="text" 
-                        name='review'
-                        value={form.review}
-                        onChange={(e) => setForm({review: e.target.value})}
-                        ref={userReview}
+                        name='comment'
+                        value={comment}
+                        onChange={onChange}
                         className='outline-none border-2 border-neutral-800 
                         pb-44 p-2 md:w-[1200px] w-full bg-transparent 
                         focus:border-red-600' />
@@ -78,9 +91,8 @@ const Review = () => {
                             <input 
                                 type="text" 
                                 name='name'
-                                value={form.name}
-                                ref={userName}
-                                onChange={(e) => setForm({name: e.target.value})}
+                                value={name}
+                                onChange={onChange}
                                 className='outline-none border-2 border-neutral-800 
                                 pb-44 p-2 bg-transparent w-full
                                 focus:border-red-600' />
@@ -90,8 +102,8 @@ const Review = () => {
                             <input 
                                 type="text" 
                                 name='email'
-                                value={form.email}
-                                onChange={(e) => setForm({email: e.target.value})}
+                                value={email}
+                                onChange={onChange}
                                 className='outline-none border-2 border-neutral-800 
                                 pb-44 p-2 bg-transparent w-full
                                 focus:border-red-600' />

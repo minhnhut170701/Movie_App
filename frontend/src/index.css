@@ -73,7 +73,7 @@ code {
   position: relative;
   outline: none;
   border: none;
-  background: red;
+  background: rgb(0, 0, 0);
  z-index: 1;
 }
 .css-button-shadow-border-sliding--rose:hover:after {
@@ -90,7 +90,7 @@ code {
   z-index: -1;
   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
   transition: all 0.3s ease;
-  background-color: #cd3b3b;
+  background-color: #ff0000;
   right: 0;
 }
 .css-button-shadow-border-sliding--rose:active {

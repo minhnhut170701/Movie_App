@@ -2,7 +2,7 @@ import 'swiper/css';
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import {BrowserRouter, Routes, Route } from "react-router-dom";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import { useSelector } from 'react-redux';
 import 'react-toastify/dist/ReactToastify.css'
@@ -19,7 +19,6 @@ import PricingPage from './components/Pricing/PricingPage';
 import PayPage from './components/Pay/PayPage';
 import ProfilePage from './components/Profile/ProfilePage';
 import Spiner from './components/Spiner';
-import Dashboard from './View/Dashboard';
 
 function App() {
   
@@ -33,7 +32,6 @@ function App() {
      <ScrolltoTop />
       <Nav />
       <Routes>
-        <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/' element={<Home />} />
           <Route path='/:detail' element={<Detail />} />
           <Route path='/search' element={<FillterMovie />} />

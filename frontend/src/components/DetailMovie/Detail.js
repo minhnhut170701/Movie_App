@@ -1,34 +1,43 @@
 import { InforMovieDetail } from './InforMovieDetail';
 import { TabEp } from './Tab';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Movie from '../Movie/Movie';
 import { movie } from '../../data/topmovie';
 
-import { useParams } from 'react-router-dom';
-import { getMovie } from '../../data/topmovie';
-
+import { useParams} from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { getData } from '../../features/movie/movieSlice';
+import Spiner from '../Spiner';
 
 
 const Detail = () => {
+    const {detail} = useParams()
+    const dispatch = useDispatch()
+    const {data} = useSelector((state) => state.movie)
 
-    const parmas = useParams();
-    const data =  getMovie(parseInt(parmas.detail, 10));
+    useEffect(() =>{ 
+       dispatch(getData())
+    },[dispatch])
+    
+    const movieDetail = data.find(movie => movie._id === detail)
 
+   
+  
   return (
     <div className='relative text-white'>
         <div className='max-w-7xl margin-center' >
             <iframe width="1280" height="615" 
             className="w-full"
-            src={`${data.url}?autoplay=0&rel=0`}
+            src={`${movieDetail?.url}?autoplay=0&rel=0`}
             title="trailer movie" frameborder="0"
             allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen />
         </div>
         {/* infor movie */}
-            <InforMovieDetail data={data}     />
+            <InforMovieDetail data={movieDetail}     />
         {/* Review */}
         <div className='max-w-7xl margin-center mt-16'>
-           <TabEp   />
+           <TabEp  data={movieDetail}  />
         </div>
 
         <div className='w-[70%] mt-16 bg-gradient-to-r from-[#141414] via-slate-200 to-[#141414] 
@@ -42,7 +51,7 @@ const Detail = () => {
             <div>
                 <section className='flex'>
                     <img className='w-[50%] h-32 object-cover '
-                    src="https://scontent.fsgn5-11.fna.fbcdn.net/v/t1.6435-9/41487140_340725713336695_8012734078824480768_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=hqhgaFc9bd0AX8lRe2J&tn=P76TQ7TL9jd3w68d&_nc_ht=scontent.fsgn5-11.fna&oh=00_AT_5vEypUKOG8DLchhczzeQL15AR6t9TWR2wYEVxrLdETg&oe=628064A4"
+                    src="https://vnn-imgs-f.vgcloud.vn/2019/12/30/23/bat-gap-thu-suong-hen-ho-luc-nua-dem-voi-dan-ong-trung-nien-10.jpg"
                     alt="error" />
                     <div className='bg-[#191919] w-[50%] p-4 flex flex-col justify-center'>
                         <h3>Đạo Diễn</h3>

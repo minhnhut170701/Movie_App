@@ -20,6 +20,7 @@ app.use(express.static('public'));
 
 app.use('/api/goals', require('./route/goalRoute'))
 app.use('/api/users', require('./route/userRoute'))
+app.use('/api/comments', require('./route/commentRoute'))
 
 
 if(process.env.NODE_ENV === "production"){

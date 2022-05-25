@@ -1,6 +1,6 @@
 const Goal = require('../model/goalModel')
 const User = require('../model/userModel')
-
+const mongoose = require('mongoose')
 const asyncHandler = require("express-async-handler")
 
 const getGoals = asyncHandler(async (req, res) =>{
@@ -38,6 +38,36 @@ const setGoals = asyncHandler(async (req, res) =>{
         ep: req.body.ep,
         url: req.body.url
     })
+    res.status(200).json(goal)
+})
+//@  SET goal Comment
+//@ route POST /api/goal/:id
+//@ access Prive
+const setGoalsComment = asyncHandler(async(req,res) =>{
+    const {name, comment, rate} = req.body
+
+    const movie = await Goal.findById(req.params.id)
+    if(!movie){
+        res.status(400)
+        throw new Error("Goal not found")
+    }
+
+    var id = mongoose.Types.ObjectId(req.params.id.trim());
+    
+    if(!req.body){
+        res.status(400)
+        throw new Error("please add a text field")
+    }
+
+    const goal = await Goal.updateOne({_id: id}, 
+    {$push:{comment: {
+        name: name, 
+        comment: comment,
+        rate: rate,
+        time: new Date().toLocaleDateString('en-us', 
+        { weekday:"long", year:"numeric", month:"short", day:"numeric"})
+    }}})
+
     res.status(200).json(goal)
 })
 
@@ -100,4 +130,5 @@ module.exports = {
     updateGoal,
     deleteGoals,
     searchGoals,
+    setGoalsComment
 }

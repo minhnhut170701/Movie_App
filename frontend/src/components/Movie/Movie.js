@@ -9,16 +9,15 @@ import {Link} from "react-router-dom"
 
 const Movie = ({title, data, isTop}) => {
   
-  
   return (
     <div className='text-white max-w-7xl  margin-center mt-16'>
       <div role="group" className='flex items-center justify-between p-4'>
           <h1 className='text-4xl font-bold'>{title}</h1>
           <Link to="/search" className='text-lg text-red-600 font-bold'>View All</Link>
       </div>
-      <div className='mt-3 md:flex md:items-center md:space-x-4 relative grid grid-cols-2 gap-4 p-4'>
+      <div className='mt-3 md:flex md:items-center md:space-x-4 relative grid grid-cols-2 gap-2 p-4'>
         {data.map((item) => (
-          <Link to={`/${item.id}`} key={item.id}
+          <Link to={`/${item._id}`} key={item._id}
             className={isTop ? "md:w-[20%] w-[100%] h-[360px] relative bg-no-repeat bg-cover bg-center hover-show":
             "md:w-[20%] w-[100%] h-[250px] relative  bg-no-repeat bg-cover bg-center hover-show"}
           style={{backgroundImage: `url(${item.imageSmall})`}}>
@@ -44,6 +43,7 @@ const Movie = ({title, data, isTop}) => {
                     
                 </div>
               </div>
+              {/* modal */}
               <div className='w-[300px] h-auto pb-2 bg-[#141414] absolute top-0 z-30 hidden modal
                 scale-100 hover:scale-105 transition-transform duration-500 ease-in-out '>
                   <div className='relative'>

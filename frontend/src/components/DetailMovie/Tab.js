@@ -3,7 +3,7 @@ import { Tab } from '@headlessui/react'
 import Review from './Review';
 import Episode from './Episode';
 
-export function TabEp() {
+export function TabEp({data}) {
   return <Tab.Group>
                 <div className="line-gradient">
                 <Tab.List className="max-w-4xl margin-center flex space-x-4 md:pl-32">
@@ -45,7 +45,7 @@ export function TabEp() {
                         </h1>
                     </Tab.Panel>
                     <Tab.Panel>
-                        <Review />
+                        <Review dataComment={data}/>
                     </Tab.Panel>
                     <Tab.Panel>
                         <Episode />

@@ -1,7 +1,7 @@
 import React, {useMemo, useState} from 'react'
 
 import {AiFillStar} from "react-icons/ai";
-const Rate = ({count, setRating, rating, userRating}) => {
+const Rate = ({count, setRating, rating, rateRef}) => {
 
     
     const [hoverRating, setHoverRating] = useState(null)
@@ -34,10 +34,10 @@ const Rate = ({count, setRating, rating, userRating}) => {
                 <label>
                     <input 
                     type="radio" 
-                    name="rating" 
-                    ref={userRating}
+                    name="rate" 
                     value={ratingValue} 
                     className="hidden"
+                    ref={rateRef}
                     onClick={() => setRating(ratingValue)}
                     />
                     <AiFillStar 

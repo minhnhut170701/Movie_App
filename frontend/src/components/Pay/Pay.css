@@ -32,6 +32,10 @@
     font-size: 2rem !important;
 }
 
+.css-4ff9q7{
+    color: red !important;
+}
+
 .css-1hngkjo{
     color: white !important;
     font-size: 1.2rem;
@@ -39,4 +43,12 @@
 
 .css-4ff9q7.Mui-completed {
     color: red !important;
+}
+
+.css-farnub.Mui-completed{
+    color: white !important;
+}
+.css-farnub.Mui-active{
+    color: white !important;
+    font-size: 1.2rem;
 }

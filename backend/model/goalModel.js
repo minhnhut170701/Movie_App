@@ -38,6 +38,10 @@ const goalSchema = mongoose.Schema({
         type: String,
         require: true,
     },
+    comment:{
+        type: Array,
+        require: false,
+    }
 },{
     timestamp: true,
 }

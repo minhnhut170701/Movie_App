@@ -1,0 +1,34 @@
+.text-animation{
+    animation: textup 1s ease-in ;
+}
+.text-animation-2{
+    animation: textup-2 1s ease-in ;
+}
+
+@keyframes textup{
+   0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes textup-2{
+    0%{
+         transform: translateX(-100px);
+         opacity: 0;
+     }
+     100%{
+         transform: translateX(0px);
+         opacity: 1;
+     }
+ }
+
+
+.swiper-button-prev, .swiper-button-next{
+    color: red;
+    font-weight: 600;
+}

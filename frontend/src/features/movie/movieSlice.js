@@ -2,6 +2,7 @@ import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import movieService from './movieService';
 const initialState = {
     data: [],
+    comment: [],
     isError: false,
     isSuccess: false,
     isLoading: false,
@@ -27,6 +28,20 @@ export const getData = createAsyncThunk('data/getAll', async (_,thunkAPI) =>{
 export const searchData = createAsyncThunk('data/searchAll', async(key,thunkAPI) =>{
     try{
         return await movieService.searchData(key)
+    }catch(error){
+        const message = (error.reponse && error.response.data && error.response.data.message)
+         || error.message
+         || error.toString()
+        
+         return thunkAPI.rejectWithValue(message)
+    }
+})
+
+//comment movie
+export const setDataComment = createAsyncThunk('data/comment', async({key,data},thunkAPI) =>{
+    try{
+        const token = thunkAPI.getState().auth.user.token
+        return await movieService.setDataComment(key,data,token)
     }catch(error){
         const message = (error.reponse && error.response.data && error.response.data.message)
          || error.message
@@ -70,6 +85,20 @@ export const movieSlice = createSlice({
             state.isLoading = false
             state.isError = true
             state.message = action.payload
+        })
+        .addCase(setDataComment.pending, (state) =>{
+            state.isLoading = true
+        })
+        .addCase(setDataComment.fulfilled, (state, action) =>{
+            state.isLoading = false
+            state.isSuccess = true
+            state.comment = action.payload
+        })
+        .addCase(setDataComment.rejected, (state, action) =>{
+            state.isLoading = false
+            state.isError = true
+            state.message = action.payload
+            state.comment = null
         })
     }
 })
