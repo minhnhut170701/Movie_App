@@ -69,7 +69,9 @@ const LoginPage = () => {
                     className='p-4 w-full bg-[#191919]'
                     name="email"
                      value={email}
+                     required
                      onChange={onChange} />
+
                 </div>
                 <div className='mt-10 space-y-4'>
                     <h2>Password</h2>

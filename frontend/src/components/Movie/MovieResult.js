@@ -9,7 +9,7 @@ const MovieResult = ({ data, key}) => {
   return (
       <div className='mt-3 w-[100%] h-[300px] relative bg-no-repeat bg-cover hover-show' 
       style={{backgroundImage: `url(${data.imageSmall})`}} key={key}>
-          <Link to={`/${data.id}`} key={data.id}>
+          <Link to={`/${data._id}`} key={data._id}>
               {/* inforMovie */}
               <div className='absolute top-[50%]  md:p-4 p-2 w-full space-y-2 z-10'>
                 <h3 className='p-2 bg-gradient-to-r from-red-600 text-white w-28 show-category font-bold'>

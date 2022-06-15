@@ -86,9 +86,9 @@ const Detail = () => {
         </div>
 
         <div className='mt-20 max-w-7xl margin-center'>
-            <Movie title="Recomend" data={movie.slice(0,5)} />
-            <Movie title="Ralated" data={movie.slice(5,9)} />
-            <Movie title="Upcoming" data={movie.slice(3,8)} />
+            <Movie title="Recomend" data={data.slice(0,5)} />
+            <Movie title="Ralated" data={data.slice(5,9)} />
+            <Movie title="Upcoming" data={data.slice(3,8)} />
         </div>
 
     </div>
