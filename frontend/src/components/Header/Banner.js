@@ -4,7 +4,7 @@ import {BsFillPlayFill} from "react-icons/bs";
 import {AiFillStar} from "react-icons/ai";
 import {Link} from "react-router-dom"
 import "./Header.css"
-const Banner = ({title, des, vote, ep, text}) => {
+const Banner = ({title, des, vote, ep, text, id}) => {
   
   return (
     <div className={text ? 'text-white relative z-20 max-w-full md:p-36 p-10 md:mt-5 mt-28 space-y-4 text-animation-2 ' :
@@ -40,7 +40,7 @@ const Banner = ({title, des, vote, ep, text}) => {
             <h3>General:</h3>
             <h3>Tag:</h3>
         </div>
-        <Link to="/detail">
+        <Link to={`/${id}`}>
             <button className='css-button-shadow-border-sliding--rose flex items-center space-x-2 mt-5'> 
                 <p className='text-2xl'><BsFillPlayFill /></p>
                 <p>Play Now</p>
