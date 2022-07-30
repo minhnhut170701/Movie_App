@@ -89,7 +89,7 @@ const fillterItem = (text) =>{
         {/* categorize */}
         <select name="categorize" value={selec}
                 onChange={(e) => fillterItem(e.target.value)}
-               className="absolute top-24 left-[10%] z-20 bg-[#14141480] text-white p-2 outline-none">
+               className="absolute top-24 left-[10%] z-10 bg-[#14141480] text-white p-2 outline-none">
                     <option value="Fillter">General</option>
                     <option value="huyen-ao">Huyền Ảo</option>
                     <option value="lang-man">Lãng Mạng</option>

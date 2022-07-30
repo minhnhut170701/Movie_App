@@ -11,7 +11,7 @@ const Header = () => {
  
   return (
     <header className='max-w-full h-auto relative'>
-       <Nav />
+        <Nav />
         <InforHotmovie />
 
     </header>

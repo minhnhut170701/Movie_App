@@ -83,7 +83,7 @@ const Review = ({dataComment}) => {
                         value={comment}
                         onChange={onChange}
                         className='outline-none border-2 border-neutral-800 
-                        pb-44 p-2 md:w-[1200px] w-full bg-transparent 
+                        pb-44 p-2 lg:w-[1200px] w-full bg-transparent 
                         focus:border-red-600' />
                     <div className='flex items-center space-x-6'>
                         <aside className=' w-[50%]'>

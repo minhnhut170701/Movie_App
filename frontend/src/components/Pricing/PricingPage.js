@@ -12,7 +12,7 @@ const PricingPage = () => {
         </div>
 
         {/* pricing form */}
-        <div className='max-w-7xl mt-20 margin-center'>
+        <div className='lg:max-w-7xl mt-20 lg:margin-center p-4'>
             <PricingForm />
         </div>
 

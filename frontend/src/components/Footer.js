@@ -40,11 +40,11 @@ const Footer = () => {
             {/* app on mobile */}
             <div className='space-y-4'>
                 <h4 className='text-lg'>Mobile App:</h4>
-                <div className='flex items-center space-x-2'>
+                <div className='flex items-center lg:space-x-2 md:flex-col md:space-y-2 lg:flex-row lg:space-y-0'>
                     <img src="https://wordpress.iqonic.design/product/wp/streamit/wp-content/uploads/2020/12/022.png"
-                    alt='error' />
+                    alt='error' className='w-[200px] h-[50px]'  />
                     <img src="https://wordpress.iqonic.design/product/wp/streamit/wp-content/uploads/2020/12/011.png"
-                    alt='error' />
+                    alt='error' className='w-[200px] h-[50px]' />
                     
                 </div>
             </div>

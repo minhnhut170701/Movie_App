@@ -14,8 +14,8 @@ const Movie = ({title, data, isTop}) => {
       <div className='mt-3 md:flex md:items-center md:space-x-4 relative grid grid-cols-2 gap-2 p-4'>
         {data.map((item) => (
           <Link to={`/${item._id}`} key={item._id}
-            className={isTop ? "md:w-[20%] w-[100%] h-[360px] relative bg-no-repeat bg-cover bg-center hover-show":
-            "md:w-[20%] w-[100%] h-[250px] relative  bg-no-repeat bg-cover bg-center hover-show"}
+            className={isTop ? "md:w-[20%] w-[100%] h-[360px] relative bg-no-repeat bg-cover bg-center lg:hover-show":
+            "md:w-[20%] w-[100%] h-[250px] relative  bg-no-repeat bg-cover bg-center lg:hover-show"}
           style={{backgroundImage: `url(${item.imageSmall})`}}>
               {/* inforMovie */}
               <div className={isTop ? 'absolute top-[60%] md:p-4 p-2 w-full space-y-2 z-10' :
@@ -28,7 +28,7 @@ const Movie = ({title, data, isTop}) => {
                     <button className='p-2 border rounded-full bg-white text-black text-xl'><BsFillPlayFill /></button>
                     <div>
                       <p>Vote: {item.rate}</p>
-                      <div className='text-red-600 flex items-center space-x-2'>
+                      <div className='text-red-600 flex items-center lg:space-x-2 text-sm lg:text-lg'>
                         <AiFillStar />
                         <AiFillStar />
                         <AiFillStar />

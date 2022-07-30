@@ -1,17 +1,21 @@
 import React, {useEffect, useState} from 'react';
 import MovieResult from './MovieResult';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import {  getData } from '../../features/movie/movieSlice'; 
 
 const FillterMovie = () => {
     const [search, setSearch] = useState('');
     const dispatch = useDispatch()
+    const navigative = useNavigate
     const {data} = useSelector((state) => state.movie)
+    const {user} = useSelector((state) => state.auth)
     
     useEffect(() =>{
+       if(user){
         dispatch(getData())
-    }, [dispatch])
-
+       }
+    }, [dispatch, user])
    
    
   return (

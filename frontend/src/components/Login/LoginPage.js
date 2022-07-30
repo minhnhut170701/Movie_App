@@ -57,7 +57,7 @@ const LoginPage = () => {
     }
     return (
     <div className='bg-background-login bg-center bg-no-repeat bg-cover w-full h-[900px] relative'>
-        <div className="bg-[#14141480] backdrop-blur-xl w-[600px] h-[600px] 
+        <div className="bg-[#14141480] backdrop-blur-xl lg:w-[600px] h-[600px] 
         margin-center relative top-40 text-white p-10">
             <form onSubmit={onSubmit}>
                 <Link to="/">
@@ -93,7 +93,7 @@ const LoginPage = () => {
             </form>
             {/* register */}
             <section className='flex items-center justify-between'>
-                <div className='flex items-center space-x-3 mt-6'>
+                <div className='flex items-center lg:space-x-3 space-x-6 mt-6'>
                     <h3>Register</h3>
                     <p>|</p>
                     <Link to="/register" className='text-md text-red-600'>you don't have account?</Link>

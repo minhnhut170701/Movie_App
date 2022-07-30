@@ -11,8 +11,8 @@ const PricingForm = () => {
    
     
   return (
-    <div className='text-white'>
-        <form className='table-auto  w-[85%] margin-center border-collapse bg-[#191919]'>
+    <div className='text-white w-[100%] overflow-x-auto'>
+        <table className='table-auto lg:w-[85%] margin-center border-collapse bg-[#191919]'>
             <thead>
                 <tr>
                     <th className='p-4'></th>
@@ -131,7 +131,7 @@ const PricingForm = () => {
                     </td>
                 </tr>
             </tbody>
-        </form>
+        </table>
         
     </div>
   )

@@ -20,7 +20,7 @@ const MovieResult = ({ data, key}) => {
                     <button className='p-2 border rounded-full bg-white text-black text-xl'><BsFillPlayFill /></button>
                     <div>
                       <p>Vote: {data.rate}</p>
-                      <div className='text-red-600 flex items-center space-x-2'>
+                      <div className='text-red-600 flex items-center lg:space-x-2 text-lg'>
                         <AiFillStar />
                         <AiFillStar />
                         <AiFillStar />

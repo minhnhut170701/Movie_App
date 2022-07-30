@@ -64,13 +64,13 @@ const RegisterPage = () => {
     }
   return (
     <div className='bg-background-login bg-center bg-no-repeat bg-cover w-full h-[900px] relative'>
-            <div className="bg-[#14141480] backdrop-blur-xl w-[600px] h-[600px] overflow-x-hidden
+            <div className="bg-[#14141480] backdrop-blur-xl lg:w-[600px] h-[600px] overflow-x-hidden
         margin-center relative top-40 text-white p-10 scrollbar-thin scrollbar-thumb-slate-200">
              <Link to="/">
                     <h1 className='text-center text-4xl text-red-600 font-bold'>Movie Best</h1>
             </Link>
             <form className='mt-10' onSubmit={onSubmit}>
-                <section className=' grid grid-cols-2 gap-6 justify-items-center '>
+                <section className=' grid lg:grid-cols-2 grid-cols-1 gap-6 justify-items-center '>
                     <div>
                         <p>Username*</p>
                         <input type="text" className='p-2 bg-[#191919]' name="name" value={name} onChange={onChange} />
