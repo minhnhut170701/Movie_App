@@ -11,12 +11,7 @@ const Nav = () => {
   const {user} = useSelector((state) => state.auth)
   const [menu, setMenu] = useState(false)
 
-  useEffect(() =>{
-    if(!user){
-      navigate('/login')
-    }
-  }, [user, navigate])
-
+ 
   const onLogout = () =>{
     dispatch(logout())
     dispatch(reset())
