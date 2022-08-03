@@ -84,6 +84,12 @@ const LoginPage = () => {
                 <div className='space-x-2 flex mt-4'>
                     <input type="checkbox" name='remember' className='w-4 h-4 mt-2' />
                     <label for="remember" className='mt-1'>Remember Me</label>
+                    <div className='flex  space-x-3 '>
+                        <span>Username: admin@gmail.com</span>
+                        <span>Password: 123456</span>
+                        <p>You can using it 🥰</p>
+                    </div>
+                    
                 </div>
 
                 <button type='submit' 
