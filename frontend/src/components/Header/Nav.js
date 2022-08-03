@@ -29,6 +29,7 @@ const Nav = () => {
 
   return (
     <nav className=' bg-[#14141480] w-full h-[70px] text-white absolute top-0 z-20 backdrop-blur-sm'>
+      {/* menu mobile */}
       {menu && (
         <div className='p-6 absolute top-0 left-0 w-full h-[500px] bg-black  z-50 '>
           <section className='flex items-center justify-between'>
@@ -46,18 +47,20 @@ const Nav = () => {
         </div>
 
       )}
+
+      {/* menu desktop */}
         
-        <div className='max-w-7xl margin-center p-5 flex items-center lg:space-x-64 justify-between  '>
-        <Link to="/" className='uppercase text-red-600 font-bold text-3xl'>Movie Best</Link>
-        <button onClick={() => setMenu(!menu)} className='flex flex-col space-y-2 lg:hidden md:flex'>
-          <span className='h-[5px] w-10 bg-white'></span>
-          <span className='h-[5px] w-10 bg-white'></span>
-          <span className='h-[5px] w-10 bg-white'></span>
-        </button>
+        <div className='max-w-7xl margin-center p-5 flex items-center justify-between  '>
+          <Link to="/" className='uppercase text-red-600 font-bold lg:text-3xl md:text-xl sm:text-sm'>Movie Best</Link>
+          <button onClick={() => setMenu(!menu)} className='flex flex-col space-y-2 lg:hidden md:flex'>
+            <span className='h-[5px] w-10 bg-white'></span>
+            <span className='h-[5px] w-10 bg-white'></span>
+            <span className='h-[5px] w-10 bg-white'></span>
+          </button>
         
           {user ? (
-          <div className='hidden lg:space-x-44 items-center md:hidden lg:flex '>
-              <ul className='uppercase flex items-center space-x-4'>
+            <div className='hidden items-center justify-between lg:flex w-[60%]'>
+              <ul className='uppercase items-center flex space-x-4'>
                   <Link to='/' className='hover:text-red-600 transition-colors duration-300 ease-linear'>Home</Link>
                   <li className='hover:text-red-600 transition-colors duration-300 ease-linear'>Movie</li>
                   <li className='hover:text-red-600 transition-colors duration-300 ease-linear'>TV Shows</li>
@@ -67,18 +70,20 @@ const Nav = () => {
                   <li className='hover:text-red-600 transition-colors duration-300 ease-linear'>Pages</li>
                   <li className='hover:text-red-600 transition-colors duration-300 ease-linear'>Blogs</li>
               </ul>
-              <div className='flex items-center space-x-4'>
-                <Link to="/login" className='text-2xl'><AiOutlineSearch /></Link>
-                <Link to="/profile">{user.name}</Link>
-                <button onClick={onLogout} >Logout</button>
-                
-              </div>
-          </div>
+                  <div className='flex items-center space-x-4'>
+                    <Link to="/login" className='text-2xl'><AiOutlineSearch /></Link>
+                    <Link to="/profile">{user.name}</Link>
+                    <button onClick={onLogout} >Logout</button>
+                  </div>
+            </div>
+              
+              
+          
             
             
 
           ) : (
-              <ul className='uppercase hidden items-center space-x-4 md:flex'>
+              <ul className='uppercase hidden items-center space-x-4 lg:flex'>
                   <Link to='/' className='hover:text-red-600 transition-colors duration-300 ease-linear'>Home</Link>
                   <li className='hover:text-red-600 transition-colors duration-300 ease-linear'>Movie</li>
                   <li className='hover:text-red-600 transition-colors duration-300 ease-linear'>TV Shows</li>

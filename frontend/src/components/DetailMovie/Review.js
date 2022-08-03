@@ -66,7 +66,7 @@ const Review = ({dataComment}) => {
           </article>
           
             {/* your contact */}
-            <div className='mt-5 space-y-5 w-[100%]'>
+            <div className='mt-5 space-y-5 lg:w-[1200px] w-full'>
                 <h2 className='text-2xl font-bold'>Add a review</h2>
                 <p className='text-neutral-500'>Your email address will not be published. Required fields are marked *</p>
                 <form className='space-y-5' onSubmit={handleSubmit}>
