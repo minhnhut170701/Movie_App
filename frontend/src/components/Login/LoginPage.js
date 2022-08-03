@@ -20,26 +20,26 @@ const LoginPage = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    const {user, isLoading, isError, isSuccess, message} = useSelector((state) => state.auth) 
+    const {user, isLoading, isError, isSuccess} = useSelector((state) => state.auth) 
 
     useEffect(() =>{
         if(isError){
-            toast.error(message)
+            toast.error("Sai tài khoản hoặc mật khẩu")
+        }
+        if(isSuccess){
+            toast.success("Đăng nhập thành công")
         }
         if(isSuccess || user){
             navigate('/')
-            toast.success('Đăng nhập thành công')
         }
         dispatch(reset())
-    }, [user, isError, isSuccess, message, navigate, dispatch])
+    }, [user, isError, isSuccess, navigate, dispatch])
 
     const onChange = (e) =>{
         setFormData((prevState) =>({
             ...prevState,
             [e.target.name]: e.target.value,
         }))
-
-        
     }
     const onSubmit = (e) =>{
         e.preventDefault()
@@ -48,8 +48,8 @@ const LoginPage = () => {
             email,
             password
         }
-    
         dispatch(login(userData))
+        
     }
 
     if(isLoading){

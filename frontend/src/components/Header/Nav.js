@@ -4,6 +4,7 @@ import {Link, useNavigate} from "react-router-dom";
 import { useSelector, useDispatch} from 'react-redux';
 import { logout, reset } from '../../features/auth/authSlice';
 import {AiOutlineUser,AiOutlineSearch,AiOutlineCloseCircle} from "react-icons/ai"
+import { toast } from 'react-toastify';
 const Nav = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -20,6 +21,7 @@ const Nav = () => {
     dispatch(logout())
     dispatch(reset())
     navigate('/login')
+    toast.success("Đăng xuất thành công")
   }
 
   const setModalMenu = () =>{

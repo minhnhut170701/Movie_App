@@ -23,18 +23,19 @@ const RegisterPage = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    const {user, isLoading, isError, isSuccess, message} = useSelector((state) => state.auth) 
+    const {user, isLoading, isError, isSuccess} = useSelector((state) => state.auth) 
 
     useEffect(() =>{
         if(isError){
-            toast.error(message)
+            toast.error("Đăng ký không thành công!")
         }
         if(isSuccess || user){
             navigate('/')
+            toast.success("Tài khoản đã tạo thành công")
         }
 
         dispatch(reset())
-    }, [user, isError, isSuccess, message, navigate, dispatch])
+    }, [user, isError, isSuccess, navigate, dispatch])
 
     const onChange = (e) =>{
         setFormData((prevState) =>({
